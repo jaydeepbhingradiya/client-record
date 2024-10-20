@@ -19,7 +19,6 @@ const App = () => {
       const data = JSON.parse(e.target.result);
       const uniqueData = removeDuplicatesByEmail(data);
       setRecords(prevRecords => mergeRecords(prevRecords, uniqueData));
-      // Reset the page to 0 when new data is added
       setCurrentPage(0);
     };
 
@@ -48,7 +47,6 @@ const App = () => {
 
   const handleSearch = (term) => {
     setSearchTerm(term);
-    // Reset the page to 0 when the search term is changed
     setCurrentPage(0);
   };
 
@@ -58,7 +56,6 @@ const App = () => {
     record.id.toString().includes(searchTerm)
   );
 
-  // Ensure the records are sliced for the current page only
   const offset = currentPage * itemsPerPage;
   const currentRecords = filteredRecords.slice(offset, offset + itemsPerPage);
 
@@ -76,7 +73,6 @@ const App = () => {
 
   const handleDelete = (id) => {
     setRecords(records.filter(record => record.id !== id));
-    // Reset pagination if the page might be invalid after deleting the last item on a page
     if (filteredRecords.length - 1 <= offset) {
       setCurrentPage(Math.max(0, currentPage - 1));
     }

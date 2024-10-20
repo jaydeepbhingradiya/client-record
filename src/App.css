@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +31,6 @@ h1 {
   text-align: center;
 }
 
-/* File Upload */
 input[type="file"] {
   padding: 10px;
   margin-bottom: 20px;
@@ -54,7 +52,6 @@ input[type="file"]::file-selector-button {
   display: none;
 }
 
-/* Search Bar */
 input[type="text"] {
   width: 100%;
   padding: 10px;
@@ -71,7 +68,6 @@ input[type="text"]:focus {
   border-color: #007bff;
 }
 
-/* Record List */
 .records {
   margin: 20px 0;
 }
@@ -145,7 +141,6 @@ button:focus {
   font-weight: bold;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .record {
     flex-direction: column;
